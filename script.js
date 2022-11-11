@@ -11,6 +11,7 @@ let items = {
     cucumber: 0,
     tomato: 0
 }
+let price = 0
 let name = ""
 let phone = ""
 let email = ""
@@ -63,21 +64,25 @@ userphone.onchange = () => {
 
 btn1.onclick = () => {
     items['carrot'] += 1
+    price += 5
     update_orders()
 }
 
 btn2.onclick = () => {
     items['potato'] += 1
+    price += 3
     update_orders()
 }
 
 btn3.onclick = () => {
     items['cucumber'] += 1
+    price += 4
     update_orders()
 }
 
 btn4.onclick = () => {
     items['tomato'] += 1
+    price += 6
     update_orders()
 }
 
@@ -89,5 +94,22 @@ submit.onclick = () => {
 }
 
 Telegram.WebApp.onEvent("mainButtonClicked", function() {
-    tg.sendData([name, phone, email, items].toString())
+    result = ""
+    if (name != "") {
+        result += "Ваше имя: " + name + "\n"
+    }
+    if (phone != "") {
+        result += "Ваше телефон: " + phone + "\n"
+    }
+    if (email != "") {
+        result += "Ваше email: " + email + "\n"
+    }
+    result += "Ваш заказ: " + "\n"
+    for (let item in items) {
+        if (items[item] != 0) {
+            result += item + ": " + items[item] + "\n"
+        }
+    }
+    result += "\n\nС вас " + price + "$"
+    tg.sendData(result)
 })
