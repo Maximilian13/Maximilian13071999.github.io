@@ -89,5 +89,5 @@ submit.onclick = () => {
 }
 
 Telegram.WebApp.onEvent("mainButtonClicked", function() {
-    tg.sendData([name, phone, email, items])
+    tg.sendData([name, phone, email, items].toString())
 })
