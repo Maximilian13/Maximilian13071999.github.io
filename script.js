@@ -13,6 +13,7 @@ let btn3 = document.querySelector("#btn3")
 let btn4 = document.querySelector("#btn4")
 
 btn1.onclick = () => {
+    alert("морковь")
     if (tg.MainButton.isVisible) {
         tg.MainButton.hide()
     } else {
