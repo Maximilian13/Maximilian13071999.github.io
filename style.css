@@ -5,61 +5,25 @@ body {
     margin-top: 10px;
     margin-left: 10px;
     padding: 0;
+    width: 390px;
     max-width: 390px;
-    background-color: #E8FF98;
+    height: 100%;
     font-family: 'Rubik Bubbles', cursive;
+    background: url("https://i.pinimg.com/originals/99/14/35/991435025cfcd43b7da804a5bcec13ea.jpg")
 }
 
-.inner {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 200px 200px;
+#score {
+    font-weight: normal;
+    color: white;
 }
 
-img {
-    width: 150px;
-}
-
-.item {
-    text-align: center;
-}
-
-button {
-    padding: 8px;
-    text-transform: uppercase;
-    background-color: #FF3B20;
-    font-family: 'Rubik Bubbles', cursive;
-    border-radius: 10px;
-    border: none;
-}
-
-button:hover {
-    background-color: #FF8979;
-}
-
-form {
-    font-size: 12px;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-input {
+#player, #bomb {
+    position: absolute;
+    left: 50px;
+    top: 100px;
     width: 100px;
 }
 
-#result {
-    text-align: center;
+#bomb {
+    display: none;
 }
-
-#submit {
-    padding: 20px 40px;
-    background-color: red;
-    font-size: 32px;
-}
-
-#submit:hover {
-    background-color: #FF8979;
-}
-
-
-
